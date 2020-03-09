@@ -4,7 +4,7 @@ defmodule WebhookProcessor.Endpoint do
   plug Plug.Logger
   plug :match
   plug(Plug.Parsers, parsers: [:json], json_decoder: Poison)
-  plug :dispatch
+  plug :dispatch, builder_opts()
 
   get "/ping" do
     send_resp(conn, 200, "pong!")
