@@ -21,7 +21,9 @@ defmodule WebhookProcessor.MixProject do
   defp deps do
     [
       {:plug_cowboy, "~> 2.0"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:httpoison, "~> 1.6"},
+      {:mox, "~> 0.5", only: :test}
     ]
   end
 end
