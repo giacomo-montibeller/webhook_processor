@@ -1,7 +1,7 @@
 defmodule WebhookProcessor.Endpoint do
   use Plug.Router
 
-  plug Plug.Logger
+  plug Plug.Logger, log: :debug
   plug :match
   plug(Plug.Parsers, parsers: [:json], json_decoder: Poison)
   plug :dispatch, builder_opts()
